@@ -1,0 +1,35 @@
+.board {
+  display: flex;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    span {
+      display: flex;
+      
+      justify-content: center;
+      align-items: center;
+      vertical-align: baseline;
+
+      p {
+        width: 150px;
+        height: 150px;
+        line-height: 140px;
+        font-size: 100px;        
+
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  span ~ span {
+    border-top: 5px solid black;
+  }
+
+  div ~ div {
+    border-left: 5px solid black;
+  }
+
+}
