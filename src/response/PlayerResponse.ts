@@ -1,10 +1,11 @@
 import { AlgorithmType } from "../enum/AlgorithmType";
 import { PlayerType } from "../enum/PlayerType";
-import { EntityRequest } from "./EntityRequest";
+import { EntityResponse } from "./EntityResponse";
 
-export interface PlayerRequest extends EntityRequest {
+export interface PlayerResponse extends EntityResponse {
   name: string;
   type: PlayerType;
   algorithmType: AlgorithmType;
+  piece: string;
   startsPlaying: boolean;
 }
