@@ -1,3 +1,7 @@
+import { X, Circle } from 'styled-icons/feather'
+
+import { VictoryLine } from '../styles/victory-line';
+
 import '../styles/board.scss';
 
 type Element = {
@@ -13,15 +17,22 @@ type BoardProps = {
 export const Board: React.FC<BoardProps> = ({lines}) => {
 
   function HandleCheckHere(element: Element) {
- 
+    const {i, j} = element;
+    alert(`Você clicou na posição ${i} ${j}`)
   }
 
   return (
     <div className="board">
+      <VictoryLine type='H2' />
       {lines.map((line) => {
         return (
           <div>
-            {line.map(element => <span><p onClick={() => {HandleCheckHere(element)}}>{element.value}</p></span>)}
+            {line.map(element => 
+              <span onClick={() => HandleCheckHere(element)}>
+                {element.value === 'x' && <X className="x-icon"/>}
+                {element.value === 'o' && <Circle className="circle-icon"/>}
+              </span>
+            )}
           </div>
         )
       })}
