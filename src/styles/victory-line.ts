@@ -6,29 +6,29 @@ export const VictoryLine = styled.strong<Victory>`
   ::before {
     content: "";
     position: absolute;
-    top: ${(props: Victory) => 
-      props.type[0] !== 'H' || props.type === 'H2' ? 'calc(50% - 3.5px)' :
-      props.type === 'H1' ? '15.3%' :
+    top: ${(victory: Victory) => 
+      victory.type[0] !== 'H' || victory.type === 'H2' ? 'calc(50% - 3.5px)' :
+      victory.type === 'H1' ? '15.3%' :
       '83%'
     };
-    left: ${(props: Victory) => 
-              props.type === 'D1' ? '-21%' :
-              props.type === 'D2' ? '-21%' :
-              props.type === 'V1' ? '-35%' :
-              props.type === 'V3' ? '32.5%' :
-              props.type === 'V2' ? '-0.8%' :
+    left: ${(victory: Victory) => 
+              victory.type === 'D1' ? '-21%' :
+              victory.type === 'D2' ? '-21%' :
+              victory.type === 'V1' ? '-35%' :
+              victory.type === 'V3' ? '32.5%' :
+              victory.type === 'V2' ? '-0.8%' :
               '0'};
     border: 0;
     background: #272424;
 
     
-    width: ${(props: Victory) => props.type[0] === 'D' ? '600px' : props.type[0] === 'V' ? '434px' : '420px'};
+    width: ${(victory: Victory) => victory.type[0] === 'D' ? '600px' : victory.type[0] === 'V' ? '434px' : '420px'};
     height: 7px;
     
-    transform: ${(props: Victory) =>
-                  props.type[0] === 'H' ? 'rotate(0deg)' :
-                  props.type[0] === 'V' ? 'rotate(90deg)' :
-                  props.type === 'D1' ? 'rotate(46deg)' :
+    transform: ${(victory: Victory) =>
+                  victory.type[0] === 'H' ? 'rotate(0deg)' :
+                  victory.type[0] === 'V' ? 'rotate(90deg)' :
+                  victory.type === 'D1' ? 'rotate(46deg)' :
                   'rotate(134deg)'
                 };
     z-index: 1;
