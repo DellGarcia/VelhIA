@@ -1,0 +1,29 @@
+.scoreboard-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 180px;
+  padding: 5px 20px;
+
+  border-radius: 25px;
+  box-shadow: 0px 4px 0px rgb(31, 29, 29);
+  
+  // background-color: #382f74;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  color: #161515;
+
+  .x-icon {
+    width: 35px;
+    stroke-width: 2;
+    color: #161515;
+  }
+
+  .circle-icon {
+    width: 28px;
+    stroke-width: 2.5px;
+    stroke:#bdc1c6;
+  }
+}

@@ -1,4 +1,5 @@
 import { Board } from '../components/Board';
+import { Header } from '../components/Header';
 
 import '../styles/match.scss';
 
@@ -12,6 +13,7 @@ export function Match() {
 
   return (
     <div id="match-page">
+      <Header />
       <Board lines={lines}/>
     </div>
   )

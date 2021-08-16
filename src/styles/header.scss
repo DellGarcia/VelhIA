@@ -1,0 +1,14 @@
+.velhia-header {
+  display: flex;
+  flex-direction: column;
+  
+  width: 100%;
+  max-width: 50vw;
+
+  height: 150px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
