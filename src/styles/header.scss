@@ -1,14 +1,38 @@
 .velhia-header {
   display: flex;
   flex-direction: column;
+
+  margin-top: 50px;
   
   width: 100%;
   max-width: 50vw;
 
-  height: 150px;
+  height: 190px;
 
   div {
     display: flex;
     justify-content: space-between;
+  }
+
+  .turn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 20px;
+
+    .x-icon {
+      width: 30px;
+      stroke-width: 2px;
+      stroke: #161515;
+      margin-left: 5px;
+    }
+
+    .circle-icon {
+      width: 28px;
+      stroke-width: 2px;
+      stroke:#bdc1c6;
+      margin-left: 5px;
+    }
   }
 }
