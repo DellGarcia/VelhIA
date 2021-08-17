@@ -1,4 +1,3 @@
-export enum AlgorithmType
-{
+export enum AlgorithmType {
     MINIMAX = 0
 }

@@ -1,8 +1,6 @@
-import { BoardResponse } from "../BoardResponse";
-import { PlayerResponse } from "../PlayerResponse";
+import { Player } from './../../models/Player';
 
 export interface DoMoveResponse {
   sucess: boolean;
-  nextToPlay: PlayerResponse;
-  board: BoardResponse;
+  nextToPlay: Player;
 }
