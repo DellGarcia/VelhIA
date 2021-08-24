@@ -3,7 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 
 import './styles.css';
 
-interface HolmesModalProps {
+interface ModalProps {
     title: string,
     content: any,
     buttonText: string,
@@ -11,7 +11,7 @@ interface HolmesModalProps {
     confirmAction: Function
 }
 
-const DefficiencyModal:React.FC<HolmesModalProps> = (props) => {
+export const VelhIAModal:React.FC<ModalProps> = (props) => {
     const [show] = useState(true);
 
     function confirm() {
@@ -42,5 +42,3 @@ const DefficiencyModal:React.FC<HolmesModalProps> = (props) => {
         </>
     );
 }
-
-export default DefficiencyModal;

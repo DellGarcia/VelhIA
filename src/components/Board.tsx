@@ -1,6 +1,6 @@
 import { X, Circle } from 'styled-icons/feather'
 
-import { VictoryLine } from '../styles/victory-line';
+import { VictoryLine } from '../styles/components/VictoryLine';
 
 import '../styles/board.scss';
 
@@ -23,7 +23,7 @@ export const Board: React.FC<BoardProps> = ({lines}) => {
 
   return (
     <div className="board">
-      <VictoryLine type='H2' />
+      {/* <VictoryLine type='H2' /> */}
       {lines.map((line) => {
         return (
           <div>

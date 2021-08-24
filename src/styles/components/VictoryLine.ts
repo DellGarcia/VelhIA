@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
-import { Victory } from '../models/Victory';
+interface VictoryLineProps {
+  type: string;
+}
 
-export const VictoryLine = styled.strong<Victory>`
+export const VictoryLine = styled.strong<VictoryLineProps>`
   ::before {
     content: "";
     position: absolute;
-    top: ${(victory: Victory) => 
+    top: ${(victory: VictoryLineProps) => 
       victory.type[0] !== 'H' || victory.type === 'H2' ? 'calc(50% - 3.5px)' :
       victory.type === 'H1' ? '15.3%' :
       '83%'
     };
-    left: ${(victory: Victory) => 
+    left: ${(victory: VictoryLineProps) => 
               victory.type === 'D1' ? '-21%' :
               victory.type === 'D2' ? '-21%' :
               victory.type === 'V1' ? '-35%' :
@@ -22,10 +24,10 @@ export const VictoryLine = styled.strong<Victory>`
     background: #272424;
 
     
-    width: ${(victory: Victory) => victory.type[0] === 'D' ? '600px' : victory.type[0] === 'V' ? '434px' : '420px'};
+    width: ${(victory: VictoryLineProps) => victory.type[0] === 'D' ? '600px' : victory.type[0] === 'V' ? '434px' : '420px'};
     height: 7px;
     
-    transform: ${(victory: Victory) =>
+    transform: ${(victory: VictoryLineProps) =>
                   victory.type[0] === 'H' ? 'rotate(0deg)' :
                   victory.type[0] === 'V' ? 'rotate(90deg)' :
                   victory.type === 'D1' ? 'rotate(46deg)' :
