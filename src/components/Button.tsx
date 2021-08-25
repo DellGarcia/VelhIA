@@ -1,8 +1,20 @@
+import { useSound } from 'use-sound';
+
 import '../styles/button.scss';
 
-export const Button: React.FC<HTMLButtonElement | any> = (props) => {
+interface ButtonProps extends HTMLButtonElement {
+  source: any;
+}
+
+export const Button: React.FC<ButtonProps | any> = (props) => {
+  const [play, { stop }] = useSound(props.source);
+
   return (
-    <button {...props}>
+    <button 
+      onMouseEnter={() => play()}
+      onMouseLeave={() => stop()}
+      {...props}
+    >
       {props.children}
     </button>
   );
