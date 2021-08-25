@@ -73,11 +73,19 @@
   div.play-options {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 80px;
     height: 250px;
 
-    button {
-      margin-bottom: 40px;
+    button ~ button {
+      margin-top: 40px;
     }
+  }
+
+  .play {
+    align-self: center;
+    
+    width: 100px;
+    cursor: pointer;
   }
 }

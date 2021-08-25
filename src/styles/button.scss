@@ -7,13 +7,12 @@ button {
   border-radius: 5px;
   background: none;
 
- 
-
   cursor: pointer;
-  transition: color font-weight;
+  transition: color font-weight 3s;
 
   &:not(:disabled):hover {
     color: rgb(37, 37, 37);
     font-weight: bold;
+    transition: ease .2s;
   }
 }

@@ -1,13 +1,9 @@
 import '../styles/button.scss';
 
-interface ButtonProps {
-  text: string;
-}
-
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<HTMLButtonElement | any> = (props) => {
   return (
-    <button>
-      {props.text}
+    <button {...props}>
+      {props.children}
     </button>
   );
 }
