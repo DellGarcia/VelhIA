@@ -4,7 +4,8 @@ import { PlayCircle } from '@styled-icons/material-outlined';
 import { useState } from 'react';
 import { Button } from '../components/Button';
 
-import clickSound from '../sounds/interface-click.wav';
+import hoverSound from '../sounds/interface-click.wav';
+import clickSound from '../sounds/light-button.wav';
 
 import '../styles/welcome.scss';
 
@@ -26,14 +27,14 @@ export function Welcome() {
       {resumed ?
         !localMatch ? 
           <div className="play-options">
-            <Button source={clickSound} onClick={() => setLocalMatch(true)}>Local</Button>
-            <Button source={clickSound}>Online</Button>
+            <Button hover={hoverSound} click={clickSound} action={() => setLocalMatch(true)}>Local</Button>
+            <Button hover={hoverSound} click={clickSound}>Online</Button>
           </div>
           :
           <div className="play-options">
-            <Button source={clickSound}>1P vs 2P</Button>
-            <Button source={clickSound}>1P vs COM</Button>
-            <Button source={clickSound} onClick={() => setLocalMatch(false)}>Voltar</Button>
+            <Button hover={hoverSound} click={clickSound}>1P vs 2P</Button>
+            <Button hover={hoverSound} click={clickSound}>1P vs COM</Button>
+            <Button hover={hoverSound} click={clickSound} action={() => setLocalMatch(false)}>Voltar</Button>
           </div> 
         :
         <div className="play-options">
