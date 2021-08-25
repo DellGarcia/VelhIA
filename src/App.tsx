@@ -1,12 +1,20 @@
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
 import './styles/global.scss';
 
 import { Welcome } from './pages/Welcome';
-// import { Match } from './pages/Match';
+import { Loading } from './pages/Loading';
+import { Match } from './pages/Match';
 
 function App() {
   return (
-    <Welcome />
-    // <Match />
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" component={Welcome} exact/>
+        <Route path="/wait" component={Loading}/>
+        <Route path="/match" component={Match}/>
+      </Switch>
+    </BrowserRouter>
   );
 }
 

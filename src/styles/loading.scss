@@ -1,0 +1,49 @@
+$animation-time: 3.6;
+
+#page-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  .animation-container svg {
+    width: 120px;
+    transform: translate(0, -50%);
+    animation: pop 3.6s infinite;
+  }
+
+  .animation-container .x1 {
+    animation-delay: 0s;
+  }
+
+  .animation-container .circle {
+    width: 100px;
+    stroke-width: 1.2px;
+    animation-delay: 1.2s;
+    margin-bottom: 35px;
+  }
+
+  .animation-container .x2 {
+    animation-delay: 2.4s;
+  }
+
+  @keyframes pop {
+    0% { transform: translate(0, -50%) scale(1.25, 0.75); }
+    16% { transform: translate(0, -150%) scale(1, 1); }
+    18% { transform: translate(0, -150%) rotate(15deg); }
+    20% { transform: translate(0, -150%) rotate(-15deg); }
+    22% { transform: translate(0, -150%) rotate(15deg); }
+    24% { transform: translate(0, -150%) rotate(-15deg); }
+    33% { transform: translate(0, -50%) scale(1.25, 0.75); }
+  }
+
+  span {
+    font-size: 25px;
+    margin-top: -30px;
+  }
+}
+
+

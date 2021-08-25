@@ -1,6 +1,6 @@
 import { X, Circle } from 'styled-icons/feather'
 
-import { VictoryLine } from '../styles/components/VictoryLine';
+// import { VictoryLine } from '../styles/components/VictoryLine';
 
 import '../styles/board.scss';
 
