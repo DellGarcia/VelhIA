@@ -5,12 +5,14 @@ import './styles/global.scss';
 import { Welcome } from './pages/Welcome';
 import { Loading } from './pages/Loading';
 import { Match } from './pages/Match';
+import { Register } from './pages/Register';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Welcome} exact/>
+        <Route path="/create/:type" component={Register} />
         <Route path="/wait" component={Loading}/>
         <Route path="/match" component={Match}/>
       </Switch>
