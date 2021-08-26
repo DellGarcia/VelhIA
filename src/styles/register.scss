@@ -6,4 +6,23 @@
 
   width: 100vw;
   height: 100vh;
+
+  .players-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 500px;
+
+    div ~ div {
+      margin-left: 200px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
 }

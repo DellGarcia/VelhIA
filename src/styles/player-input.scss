@@ -1,0 +1,29 @@
+.player-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  width: 470px;
+  background: white;
+
+  border-radius: 5px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    width: 400px;
+    margin-block: 20px;
+  }
+
+  select, input {
+    width: 170px;
+    height: 45px;
+  }
+
+  img {
+    width: 100px;
+  }
+
+}
