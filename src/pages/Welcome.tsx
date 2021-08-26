@@ -26,16 +26,8 @@ export function Welcome() {
   }
 
   function handleCreateMatch(matchType: MatchType) {
-    history.push(`/create/${matchType}`);
+    history.push(`/create/${MatchType[matchType]}`);
   }
-
-  // function gameMode() {
-  //   return <div className="play-options">
-  //     <Button hover={hoverSound} click={clickSound}>1P vs 2P</Button>
-  //     <Button hover={hoverSound} click={clickSound}>1P vs COM</Button>
-  //     <Button hover={hoverSound} click={clickSound} action={() => setLocalMatch(false)}>Voltar</Button>
-  //   </div> 
-  // }
 
   return (
     <div id="page-welcome">
