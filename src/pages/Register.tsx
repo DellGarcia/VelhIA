@@ -8,32 +8,13 @@ import { MatchType } from "../enum/MatchType";
 
 import '../styles/register.scss';
 
-interface RegisterParams {
-  type: string;
-}
-
 export const Register = () => {
-  const params = useParams<RegisterParams>();
   const history = useHistory();
 
   const [playerX, setPlayerX] = useState('');
   const [playerO, setPlayerO] = useState('');
 
-  const [matchType, setMatchType] = useState<MatchType>();
-
-  useEffect(() => {
-    const type = params.type;
-
-    switch(type) {
-      case "PVP_LOCAL": 
-      case "PVP_ONLINE":
-      case "PVE_ALGORITM":
-        setMatchType(MatchType[type]);
-        break;
-      default:
-        history.push('/');
-    }
-  }, [history, params.type]);
+  const [matchType, setMatchType] = useState<MatchType>(0);
 
   return <div id="page-register">
     <Logo />
@@ -44,7 +25,7 @@ export const Register = () => {
     <Select value={matchType} onChange={(e: any) => setMatchType(e.target.value)}>
       <option value="0">1P vs 2P</option>
       <option value="1">1P vs COM</option>
-      <option value="2">Online</option>
+      <option value="3">COM vs COM</option>
     </Select>
     <div className="button-container">
       <Button>Start</Button>

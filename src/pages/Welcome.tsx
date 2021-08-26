@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button } from '../components/Button';
-import { MatchType } from '../enum/MatchType';
 
 import { Info } from '@styled-icons/feather';
 import { PlayCircle } from '@styled-icons/material-outlined';
@@ -25,8 +24,8 @@ export function Welcome() {
     });
   }
 
-  function handleCreateMatch(matchType: MatchType) {
-    history.push(`/create/${MatchType[matchType]}`);
+  function handleCreateMatch() {
+    history.push(`/create`);
   }
 
   return (
@@ -34,8 +33,8 @@ export function Welcome() {
       <Logo />
       {resumed ?
         <div className="play-options">
-          <Button hover={hoverSound} click={clickSound} action={() => handleCreateMatch(MatchType.PVP_LOCAL)}>Local</Button>
-          <Button hover={hoverSound} click={clickSound} action={() => handleCreateMatch(MatchType.PVP_ONLINE)}>Online</Button>
+          <Button hover={hoverSound} click={clickSound} action={handleCreateMatch}>Local</Button>
+          <Button hover={hoverSound} click={clickSound} action={handleCreateMatch}>Online</Button>
         </div>
         :
         <div className="play-options">

@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Welcome} exact/>
-        <Route path="/create/:type" component={Register} />
+        <Route path="/create" component={Register} />
         <Route path="/wait" component={Loading}/>
         <Route path="/match" component={Match}/>
       </Switch>
