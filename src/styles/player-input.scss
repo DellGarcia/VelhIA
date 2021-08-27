@@ -1,7 +1,9 @@
 .player-input {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   padding: 10px;
 
   width: 470px;
@@ -9,7 +11,7 @@
 
   border-radius: 5px;
 
-  div {
+  .input-container {
     display: flex;
     justify-content: space-between;
 
@@ -22,8 +24,36 @@
     height: 45px;
   }
 
+  input {
+    padding: 10px;
+    font-weight: medium;
+    font-size: 20px;
+  }
+
   img {
     width: 100px;
   }
 
+  .piece-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .piece-container svg {
+    width: 25px;
+    stroke-width: 2.5px;
+    cursor: pointer;
+    color: gray;
+  }
+
+  .piece-container .circle {
+    width: 20px;
+    stroke-width: 2.8px;
+  }
+
+}
+
+.selected {
+  stroke: #130f36;
 }

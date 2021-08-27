@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { Select } from './Select';
+import { X, Circle } from 'styled-icons/feather';
 
 import '../styles/player-input.scss';
-import { useEffect } from 'react';
 
-export function PlayerInput() {
+interface PlayerInputProps extends HTMLDivElement {
+  playerOneFirst: boolean;
+  setPlayerOneFirst: Function;
+}
+
+export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst}, props) => {
   const [sprite, setSprite] = useState('bottts')
   const [nickname, setNickname] = useState('');
   const [url, setUrl] = useState(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
@@ -15,9 +20,19 @@ export function PlayerInput() {
     setUrl(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
   }, [sprite, nickname])
 
-  return <div className="player-input">
+  return <div className="player-input" {...props}>
+    <div className="piece-container">
+      <X className={`${playerOneFirst && 'selected'}`} onClick={() => {
+        if(!playerOneFirst)
+          setPlayerOneFirst(!playerOneFirst);
+      }}/>
+      <Circle className={`circle ${!playerOneFirst && 'selected'}`} onClick={() => {
+        if(playerOneFirst)
+          setPlayerOneFirst(!playerOneFirst);
+      }}/>
+    </div>
     <img src={url} alt="User Avatar" />
-    <div>
+    <div className="input-container">
       <Select value={sprite} onChange={(e: any) => setSprite(e.target.value)}>
         {sprites.map(sprite => <option key={sprite} value={sprite}>{sprite}</option>)}
       </Select>
