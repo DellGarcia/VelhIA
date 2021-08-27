@@ -4,12 +4,13 @@ import { X, Circle } from 'styled-icons/feather';
 
 import '../styles/player-input.scss';
 
-interface PlayerInputProps extends HTMLDivElement {
+interface PlayerInputProps {
   playerOneFirst: boolean;
+  reversed: boolean;
   setPlayerOneFirst: Function;
 }
 
-export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst}, props) => {
+export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst, reversed = false}) => {
   const [sprite, setSprite] = useState('bottts')
   const [nickname, setNickname] = useState('');
   const [url, setUrl] = useState(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
@@ -20,15 +21,27 @@ export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, s
     setUrl(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
   }, [sprite, nickname])
 
-  return <div className="player-input" {...props}>
+  function handleChangeFirst() {
+    if(!reversed)
+      setPlayerOneFirst(true);
+    else
+      setPlayerOneFirst(false);
+  }
+
+  return <div className="player-input">
     <div className="piece-container">
       <X className={`${playerOneFirst && 'selected'}`} onClick={() => {
-        if(!playerOneFirst)
-          setPlayerOneFirst(!playerOneFirst);
+        if(!reversed)
+          setPlayerOneFirst(true);
+        else
+          setPlayerOneFirst(false);
+        
       }}/>
       <Circle className={`circle ${!playerOneFirst && 'selected'}`} onClick={() => {
-        if(playerOneFirst)
-          setPlayerOneFirst(!playerOneFirst);
+        if(reversed)
+          setPlayerOneFirst(true);
+        else
+          setPlayerOneFirst(false);
       }}/>
     </div>
     <img src={url} alt="User Avatar" />

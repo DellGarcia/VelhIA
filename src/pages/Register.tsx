@@ -23,8 +23,8 @@ export const Register = () => {
   return <div id="page-register">
     <Logo />
     <div className="players-container">
-      <PlayerInput playerOneFirst={playerOneFirst} setPlayerOneFirst={setPlayerOneFirst}/>
-      <PlayerInput playerOneFirst={!playerOneFirst} setPlayerOneFirst={setPlayerOneFirst}/>
+      <PlayerInput playerOneFirst={playerOneFirst} setPlayerOneFirst={setPlayerOneFirst} />
+      <PlayerInput playerOneFirst={!playerOneFirst} setPlayerOneFirst={setPlayerOneFirst} reversed/>
     </div>
     <Select value={matchType} onChange={(e: any) => setMatchType(e.target.value)}>
       <option value="0">1P vs 2P</option>
