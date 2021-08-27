@@ -19,7 +19,6 @@ export const Register = () => {
 
   const [matchType, setMatchType] = useState<MatchType>(0);
 
-
   return <div id="page-register">
     <Logo />
     <div className="players-container">

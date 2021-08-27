@@ -19,6 +19,17 @@
     margin-block: 20px;
   }
 
+  .input-container div {
+    display: flex;
+  }
+
+  .dice {
+    width: 30px;
+    margin-left: 15px;
+    color: #483D8B;
+    cursor: pointer;
+  }
+
   select, input {
     width: 170px;
     height: 45px;
