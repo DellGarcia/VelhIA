@@ -21,6 +21,7 @@
 
   .input-container div {
     display: flex;
+    align-items: flex-end;
   }
 
   .dice {
@@ -39,6 +40,8 @@
     padding: 10px;
     font-weight: medium;
     font-size: 20px;
+    border: 0;
+    border-bottom: 2px solid #333;
   }
 
   img {

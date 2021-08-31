@@ -1,4 +1,4 @@
-import { Circle, X } from 'styled-icons/feather';
+import { Circle, X } from '@styled-icons/feather';
 
 import '../styles/scoreboard.scss';
 

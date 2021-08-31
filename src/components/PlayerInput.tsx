@@ -2,19 +2,22 @@ import { useState, useEffect} from 'react';
 import { Select } from './Select';
 
 import { X, Circle } from 'styled-icons/feather';
-import { DiceSix } from 'styled-icons/fa-solid';
+import { DiceSix } from '@styled-icons/fa-solid';
+
+import { randomName } from '../utils/randomName';
+import { PlayerData } from '../pages/Register';
 
 import '../styles/player-input.scss';
-import { randomName } from '../utils/randomName';
 
 interface PlayerInputProps {
   playerOneFirst: boolean;
   reversed: boolean;
   setPlayerOneFirst: Function;
+  playerCallback: (playerData: PlayerData) => void;
 }
 
-export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst, reversed = false}) => {
-  const [sprite, setSprite] = useState('bottts')
+export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst, reversed = false, playerCallback}) => {
+  const [sprite, setSprite] = useState('bottts');
   const [nickname, setNickname] = useState('');
   const [url, setUrl] = useState(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
 
@@ -38,16 +41,35 @@ export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, s
     </div>
     <img src={url} alt="User Avatar" />
     <div className="input-container">
-      <Select value={sprite} onChange={(e: any) => setSprite(e.target.value)}>
+      <Select value={sprite} onChange={(e: any) => {
+        setSprite(e.target.value)
+        playerCallback({
+          nickname,
+          sprite
+        });
+      }}>
         {sprites.map(sprite => <option key={sprite} value={sprite}>{sprite}</option>)}
       </Select>
       <div>
         <input 
           value={nickname}
-          onChange={(e) => {setNickname(e.target.value)}}
+          onChange={(e) => {
+            setNickname(e.target.value);
+            playerCallback({
+              nickname,
+              sprite
+            });
+          }}
           placeholder='Nickname'
         />
-        <DiceSix className="dice" onClick={() => setNickname(randomName())}/>
+        <DiceSix className="dice" onClick={() => {
+          const name = randomName();
+          setNickname(name);
+          playerCallback({
+            nickname: name,
+            sprite
+          });
+        }}/>
       </div>
     </div>
   </div>
