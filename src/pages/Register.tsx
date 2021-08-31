@@ -1,14 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
-
 
 import { Button } from "../components/Button";
 import { Logo } from "../components/Logo";
 import { PlayerInput } from "../components/PlayerInput";
 import { Select } from "../components/Select";
 import { MatchType } from "../enum/MatchType";
-import { Match } from '../models/Match';
 
 import hoverSound from '../sounds/interface-click.wav';
 import clickSound from '../sounds/light-button.wav';
@@ -38,7 +35,7 @@ export const Register = () => {
   }
 
   async function handleCreateMatch() {
-    const req = {
+    const request = {
       type: matchType,
       players: [
           {
@@ -56,8 +53,13 @@ export const Register = () => {
       ]
     }
 
-    const res = await axios.post('http://localhost:5000/api/match/create-match', req)
-    console.log(res);
+    history.push({
+      pathname: '/wait',
+      state: {
+        request,
+        destiny: '/match'
+      }
+    });
   }
 
   return <div id="page-register">

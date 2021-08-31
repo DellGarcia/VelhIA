@@ -10,7 +10,8 @@ $animation-time: 3.6;
   height: 100vh;
 
   .animation-container svg {
-    width: 120px;
+    width: 100px;
+    color: #272424;
     transform: translate(0, -50%);
     animation: pop 3.6s infinite;
   }
@@ -20,7 +21,8 @@ $animation-time: 3.6;
   }
 
   .animation-container .circle {
-    width: 100px;
+    width: 80px;
+    color: #bdc1c6;
     stroke-width: 1.2px;
     animation-delay: 1.2s;
     margin-bottom: 35px;
