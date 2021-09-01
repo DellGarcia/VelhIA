@@ -8,15 +8,23 @@ import { randomName } from '../utils/randomName';
 import { PlayerData } from '../pages/Register';
 
 import '../styles/player-input.scss';
+import { PlayerType } from '../enum/PlayerType';
 
 interface PlayerInputProps {
   playerOneFirst: boolean;
   reversed: boolean;
+  playerType: PlayerType;
   setPlayerOneFirst: Function;
   playerCallback: (playerData: PlayerData) => void;
 }
 
-export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, setPlayerOneFirst, reversed = false, playerCallback}) => {
+export const PlayerInput: React.FC<PlayerInputProps | any> = ({
+  playerOneFirst, 
+  setPlayerOneFirst, 
+  playerType, 
+  reversed = false, 
+  playerCallback
+}) => {
   const [sprite, setSprite] = useState('bottts');
   const [nickname, setNickname] = useState('');
   const [url, setUrl] = useState(`https://avatars.dicebear.com/api/${sprite}/${nickname}.svg`);
@@ -34,7 +42,24 @@ export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, s
       setPlayerOneFirst(false);
   }
 
+  function handleRenderType() {
+    let type = 'Player';
+    switch(playerType) {
+      case PlayerType.COMPUTER:
+        type = 'COM';
+        break;
+      case PlayerType.HUMAN:
+        type = 'PLAYER';
+        break;
+    }
+
+    return type;
+  }
+
   return <div className="player-input">
+    <span className="player-type-container">
+      {handleRenderType()}
+    </span>
     <div className="piece-container">
       <X className={`${playerOneFirst && 'selected'}`} onClick={() => handleChangeFirst(reversed)}/>
       <Circle className={`circle ${!playerOneFirst && 'selected'}`} onClick={() => handleChangeFirst(!reversed)}/>

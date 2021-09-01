@@ -50,20 +50,32 @@
 
   .piece-container {
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 33px;
+    top: 20px;
   }
 
   .piece-container svg {
-    width: 25px;
+    width: 30px;
     stroke-width: 2.5px;
     cursor: pointer;
     color: gray;
   }
 
   .piece-container .circle {
-    width: 20px;
+    width: 25px;
     stroke-width: 2.8px;
+  }
+
+  .player-type-container {
+    position: absolute;
+    left: 44px;
+    top: 20px;
+
+    font-size: 20px;
+    font-weight: bold;
+    cursor: default;
+
+    color: #444
   }
 
 }
