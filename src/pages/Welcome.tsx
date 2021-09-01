@@ -37,8 +37,9 @@ export function Welcome() {
           <Button hover={hoverSound} click={clickSound} action={handleCreateMatch}>Online</Button>
         </div>
         :
-        <div className="play-options">
+        <div className="start-options">
           <Play className="play" onClick={resumeGame}/>
+          <span onClick={resumeGame}>Play</span>
         </div>
       }
       <Info className="info-icon" />

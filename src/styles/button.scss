@@ -1,7 +1,7 @@
 button {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: medium;
-  color: aliceblue;
+  
 
   border: 0;
   border-radius: 5px;
@@ -11,7 +11,8 @@ button {
   transition: color font-weight 3s;
 
   &:not(:disabled):hover {
-    color: rgb(37, 37, 37);
+    // color: rgb(37, 37, 37);
+    color: aliceblue;
     font-weight: bold;
     transition: ease .2s;
   }

@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 import { Select } from './Select';
 
 import { X, Circle } from 'styled-icons/feather';
-import { DiceSix } from '@styled-icons/fa-solid';
+import { Random } from '@styled-icons/fa-solid';
 
 import { randomName } from '../utils/randomName';
 import { PlayerData } from '../pages/Register';
@@ -62,7 +62,7 @@ export const PlayerInput: React.FC<PlayerInputProps | any> = ({playerOneFirst, s
           }}
           placeholder='Nickname'
         />
-        <DiceSix className="dice" onClick={() => {
+        <Random className="random" onClick={() => {
           const name = randomName();
           setNickname(name);
           playerCallback({

@@ -1,12 +1,11 @@
 .logo {
   h1 {
-    font-family: 'Poppins';
-    font-size: 80px;
+    font-family: 'Baloo Tamma 2';
+    font-size: 120px;
     text-align: center;
     cursor: default;
 
-    width: 300px;
-    height: 130px;
+    height: 200px;
 
     animation: slidein 30s ease-in-out infinite alternate;
 
@@ -20,16 +19,10 @@
   @keyframes slidein {
     from {
       transform: rotate(-5deg);
-      font-size: 80px;
-    }
-
-    50% {
-      font-size: 80px;
     }
 
     to {
       transform: rotate(5deg);
-      font-size: 80px;
     }
   }
 
