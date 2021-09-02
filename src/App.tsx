@@ -5,14 +5,14 @@ import './styles/global.scss';
 import { Welcome } from './pages/Welcome';
 import { Loading } from './pages/Loading';
 import { MatchPage } from './pages/MatchPage';
-import { Register } from './pages/Register';
+import { LocalRegister } from './pages/LocalRegister';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Welcome} exact/>
-        <Route path="/create" component={Register} />
+        <Route path="/create/local" component={LocalRegister} />
         <Route path="/wait" component={Loading}/>
         <Route path="/match" component={MatchPage}/>
       </Switch>

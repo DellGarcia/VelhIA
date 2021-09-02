@@ -24,14 +24,14 @@
     .x-icon {
       width: 30px;
       stroke-width: 2px;
-      stroke: #161515;
+      stroke: var(--x-icon);
       margin-left: 5px;
     }
 
     .circle-icon {
       width: 28px;
       stroke-width: 2px;
-      stroke:#bdc1c6;
+      stroke: var(--circle-icon);
       margin-left: 5px;
     }
   }

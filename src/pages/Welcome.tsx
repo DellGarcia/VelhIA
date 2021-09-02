@@ -24,8 +24,8 @@ export function Welcome() {
     });
   }
 
-  function handleCreateMatch() {
-    history.push(`/create`);
+  function handleCreateMatch(online: boolean) {
+    history.push(`/create/${online ? 'online':'local'}`);
   }
 
   return (
@@ -33,8 +33,8 @@ export function Welcome() {
       <Logo />
       {resumed ?
         <div className="play-options">
-          <Button hover={hoverSound} click={clickSound} action={handleCreateMatch}>Local</Button>
-          <Button hover={hoverSound} click={clickSound} action={handleCreateMatch}>Online</Button>
+          <Button hover={hoverSound} click={clickSound} action={() => handleCreateMatch(false)}>Local</Button>
+          <Button hover={hoverSound} click={clickSound} action={() => handleCreateMatch(true)}>Online</Button>
         </div>
         :
         <div className="start-options">

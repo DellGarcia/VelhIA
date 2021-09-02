@@ -19,7 +19,7 @@
       .x-icon {
         width: 100px;
         stroke-width: 1.6px;
-        color: #272424;
+        color: var(--x-icon);
 
         cursor: pointer;
       }
@@ -27,7 +27,7 @@
       .circle-icon {
         width: 75px;
         stroke-width: 2px;
-        stroke:#bdc1c6;
+        stroke: var(--circle-icon);
 
         cursor: pointer;
       }
@@ -35,11 +35,11 @@
   }
   
   span ~ span {
-    border-left: 7px solid #2f285e;
+    border-left: 7px solid var(--secondary);
   }
 
   div ~ div {
-    border-top: 7px solid #2f285e;
+    border-top: 7px solid var(--secondary);
   }
 
 }

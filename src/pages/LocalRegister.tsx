@@ -18,7 +18,7 @@ export interface PlayerData {
   sprite: string;
 }
 
-export const Register = () => {
+export const LocalRegister = () => {
   const history = useHistory();
   
   const [playerOneFirst, setPlayerOneFirst] = useState(true);

@@ -6,9 +6,17 @@
 }
 
 body {
-  background-color: #483D8B;
+  background-color: var(--primary);
 }
 
 body, input, button, select {
   font: 400 16px 'Itim', sans-serif;
+}
+
+:root {
+  --primary: #483D8B;
+  --secondary: #2f285e;
+
+  --x-icon: #272424;
+  --circle-icon: #bdc1c6;
 }

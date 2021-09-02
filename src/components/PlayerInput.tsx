@@ -5,10 +5,10 @@ import { X, Circle } from 'styled-icons/feather';
 import { Random } from '@styled-icons/fa-solid';
 
 import { randomName } from '../utils/randomName';
-import { PlayerData } from '../pages/Register';
+import { PlayerData } from '../pages/LocalRegister';
+import { PlayerType } from '../enum/PlayerType';
 
 import '../styles/player-input.scss';
-import { PlayerType } from '../enum/PlayerType';
 
 interface PlayerInputProps {
   playerOneFirst: boolean;
