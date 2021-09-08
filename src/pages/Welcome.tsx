@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { Button } from '../components/Button';
 import { Logo } from '../components/Logo';
+import { Footer } from '../components/Footer';
 
 import { Info } from '@styled-icons/feather';
 import { Play } from '@styled-icons/fa-solid';
@@ -43,6 +44,8 @@ export function Welcome() {
         </div>
       }
       <Info className="info-icon" />
+
+      <Footer />
     </div>
   );
 }

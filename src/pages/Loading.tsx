@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Match } from '../models/Match';
 import { X, Circle } from '@styled-icons/feather'
+import { Footer } from '../components/Footer';
 
 import '../styles/loading.scss';
 
@@ -50,6 +51,7 @@ export function Loading() {
         <X className="x2" />
       </div>
       <span>Espere um pouco enquanto preparamos um oponente!</span>
+      <Footer />
     </div>
   )
 }

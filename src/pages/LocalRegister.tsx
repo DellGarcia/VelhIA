@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Button } from "../components/Button";
+import { Footer } from "../components/Footer";
 import { Logo } from "../components/Logo";
 import { PlayerInput } from "../components/PlayerInput";
 import { Select } from "../components/Select";
@@ -73,7 +74,7 @@ export const LocalRegister = () => {
       pathname: '/wait',
       state: {
         request,
-        destiny: '/match'
+        destiny: '/match/local'
       }
     });
   }
@@ -106,5 +107,6 @@ export const LocalRegister = () => {
     <div className="button-container">
       <Button hover={hoverSound} click={clickSound} onClick={handleCreateMatch}>Start</Button>
     </div>
+    <Footer />
   </div>
 }

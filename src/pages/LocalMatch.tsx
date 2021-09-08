@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { BoardComponent } from '../components/BoardComponent';
+import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Match } from '../models/Match';
 
 import '../styles/match.scss';
 
-export function MatchPage() {
+export function LocalMatch() {
   const history = useHistory();
   const location = useLocation();
 
@@ -54,6 +55,7 @@ export function MatchPage() {
     <div id="match-page">
       <Header />
       {match && <BoardComponent board={match?.board} clickCallback={handleClickCallback}/>}
+      <Footer />
     </div>
   )
 }
