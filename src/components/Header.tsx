@@ -8,7 +8,6 @@ export function Header() {
     <header className="velhia-header">
       <div>
         <Scoreboard icon='x' score={0}/>
-        <Scoreboard icon='o' score={1}/>
       </div>
       <div className="turn">
         Vez do {

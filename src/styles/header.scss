@@ -2,25 +2,20 @@
   display: flex;
   flex-direction: column;
 
-  margin-top: 50px;
+  margin-top: 45px;
   
   width: 100%;
-  max-width: 50vw;
+  max-width: 60vw;
 
-  height: 190px;
-
-  div {
-    display: flex;
-    justify-content: space-between;
-  }
+  height: 300px;
 
   .turn {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-size: 20px;
-
+    font-size: 30px;
+    
     .x-icon {
       width: 30px;
       stroke-width: 2px;

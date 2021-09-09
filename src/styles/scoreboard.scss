@@ -3,26 +3,72 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 180px;
-  padding: 5px 20px;
+  width: 100%;
 
-  border-radius: 15px;
-  box-shadow: 0px 4px 0px rgb(31, 29, 29);
+  .player-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+
+    .player, .score {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 7px;
+      box-shadow: -4px 4px 0px rgb(31, 29, 29);
+      height: 55px;
+      padding-inline: 20px;
+
+      p {
+        font-size: 28px;
+        width: 150px;
+        text-align: end;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+      }
+    }
+
+    .player {
+      img {
+        width: 40px;
+      }
+    }
+
+    .score {
+      margin-top: 5px;
+      margin-left: 60px;
+    }
+
+    .score.reverse {
+      margin-left: 0;
+      margin-right: 60px;
+    }
+
+    .reverse {
+      flex-direction: row-reverse;
+      box-shadow: 4px 4px 0px rgb(31, 29, 29);
+
+      p {
+        text-align: start;
+      }
+    }
+  }
+
+  
   
   // background-color: #382f74;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 28px;
   color: #161515;
 
   .x-icon {
-    width: 35px;
+    width: 40px;
     stroke-width: 2;
     color: #161515;
   }
 
   .circle-icon {
-    width: 28px;
+    width: 33px;
     stroke-width: 2.5px;
     stroke:#bdc1c6;
   }
