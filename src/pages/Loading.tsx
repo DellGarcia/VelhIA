@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -21,7 +22,7 @@ export function Loading() {
           alert('Missing parameters...');
           history.goBack();
         }
-
+        console.log(request)
         const response = await axios.post('http://localhost:5000/api/match/create-match', request);
         
         if(response.status === 200) {

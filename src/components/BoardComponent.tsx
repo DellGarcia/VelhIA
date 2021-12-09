@@ -1,3 +1,4 @@
+import React from 'react';
 import { X, Circle } from '@styled-icons/feather';
 import { Board } from '../models/Board';
 import { Column } from '../models/Column';

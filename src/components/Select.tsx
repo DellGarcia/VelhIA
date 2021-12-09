@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/select.scss';
 
 export const Select: React.FC<HTMLSelectElement | any> = (props) => {

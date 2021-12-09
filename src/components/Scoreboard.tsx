@@ -1,3 +1,4 @@
+import React from 'react';
 import { Circle, X } from '@styled-icons/feather';
 
 import '../styles/scoreboard.scss';
