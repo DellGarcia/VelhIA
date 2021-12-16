@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { api } from '../services/api';
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Match } from '../models/Match';
@@ -22,8 +22,8 @@ export function Loading() {
           alert('Missing parameters...');
           history.goBack();
         }
-        console.log(request)
-        const response = await axios.post('http://localhost:5000/api/match/create-match', request);
+
+        const response = await api.post('/match/create-match/', request);
         
         if(response.status === 200) {
           const match: Match = response.data;
@@ -35,6 +35,7 @@ export function Loading() {
           });
         }
       } catch(err) {
+        console.log(err)
         alert('Não foi possivel realizar a operação desejada, o servidor pode estar indisponível ou os parametros informados incorretos.');
         history.goBack();
       }

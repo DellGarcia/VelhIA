@@ -24,7 +24,7 @@ export function LocalMatch() {
         } catch {}
       }
       else if(!tempMatch && localStorage.getItem('match')) {
-        // @ts-ignore
+        //@ts-ignore
         tempMatch = JSON.parse(localStorage.getItem('match'));
       } else {
         history.goBack();
@@ -40,22 +40,31 @@ export function LocalMatch() {
     }
 
     handleVerifyMatchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
-  function handleClickCallback(columnId: number) {
+  function handleClickCallback(columnId: string) {
     const moveRequest = {
       matchId: match?.id,
       columnId,
     }
 
-    console.log(moveRequest);
+    match?.board.lines.forEach(line => line.columns.forEach(column => {
+      if(column.id === columnId) {
+        if(column.value == 'x') {
+          column.value = 'o'
+        } else {
+          column.value = 'x'
+        }
+      }
+    }))
+    //@ts-ignore
+    setMatch({...match});
   }
 
   return (
     <div id="match-page">
       <Header />
-      {match && <BoardComponent board={match?.board} clickCallback={handleClickCallback}/>}
+      {match && <BoardComponent board={match.board} clickCallback={handleClickCallback}/>}
       <Footer />
     </div>
   )

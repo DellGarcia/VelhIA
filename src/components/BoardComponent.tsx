@@ -23,7 +23,7 @@ export const BoardComponent: React.FC<BoardProps> = ({ board, clickCallback }) =
   
   return (
     <div className="board">
-      {/* <VictoryLine type='H2' /> */}
+      {/* <VictoryLine type='H1' /> */}
       {board.lines.map((line) => {
         return (
           <div key={line.id}>

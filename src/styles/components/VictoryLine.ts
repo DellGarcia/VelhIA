@@ -10,8 +10,8 @@ export const VictoryLine = styled.strong<VictoryLineProps>`
     position: absolute;
     top: ${(victory: VictoryLineProps) => 
       victory.type[0] !== 'H' || victory.type === 'H2' ? 'calc(50% - 3.5px)' :
-      victory.type === 'H1' ? '15.3%' :
-      '83%'
+      victory.type === 'H1' ? '29.0%' :
+      '70.2%'
     };
     left: ${(victory: VictoryLineProps) => 
               victory.type === 'D1' ? '-21%' :
